@@ -1,12 +1,3 @@
-def call(){
-    pipeline {
-    agent { docker { image 'maven:3.3.3' } }
-    stages {
-        stage('build') {
-            steps {
-                sh 'mvn --version'
-            }
-        }
-    }
-}
+def call(String name = 'human') {
+    echo "Hello, ${name}."
 }
