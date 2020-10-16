@@ -1,3 +1,5 @@
-def call(String name = 'human') {
-    echo "Hello, ${name}."
+node(){
+    stage('build'){
+        echo "test"
+    }
 }
