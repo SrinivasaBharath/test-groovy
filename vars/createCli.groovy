@@ -12,13 +12,13 @@ def call(Map params){
       parallel {
         stage('Testing') {
           steps {
-            echo params.param1
+            echo "Test"
             echo " FOOBAR value: ${params.'RhVersion'}"
           }
         }
         stage('Testing2') {
           steps {
-            echo params.param2
+            echo "Test2"
           }
         }
 
