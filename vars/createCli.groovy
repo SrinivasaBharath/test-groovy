@@ -1,7 +1,7 @@
-def call(){
+def call(Map params){
     node(){
     stage('build'){
-        echo "test"
+        echo params.param1
     }
  }
 }
