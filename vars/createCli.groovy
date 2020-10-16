@@ -13,7 +13,7 @@ def call(Map params){
         stage('Testing') {
           steps {
             echo params.param1
-            echo env.RH-Version
+            echo params.RhVersion
           }
         }
         stage('Testing2') {
