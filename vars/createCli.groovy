@@ -1,12 +1,29 @@
 def call(Map params){
-    node(){
-        
-    stage('checkout'){  
+    pipeline {
+  agent any
+  stages {
+    stage('Build') {
+      steps {
         checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/red-hat-storage/cephci.git']]])
+      }
     }
-    stage('build'){
-        echo params.param1
-        echo params.param2
+
+    stage('Testing in parallel') {
+      parallel {
+        stage('Testing') {
+          steps {
+            echo params.param1
+          }
+        }
+        stage('Testing2') {
+          steps {
+            echo params.param2
+          }
+        }
+
+      }
     }
- }
+
+  }
+}
 }
