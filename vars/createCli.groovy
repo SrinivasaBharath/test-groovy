@@ -13,7 +13,7 @@ def call(Map params){
         stage('Testing') {
           steps {
             echo params.param1
-            echo params.RhVersion
+            echo " FOOBAR value: ${params.'RhVersion'}"
           }
         }
         stage('Testing2') {
