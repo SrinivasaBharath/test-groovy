@@ -13,7 +13,7 @@ def call(Map params){
         stage('Testing') {
           steps {
             echo "Test"
-            echo " FOOBAR value: ${params.'RhVersion'}"
+            echo env.getProperty("RhVersion")
           }
         }
         stage('Testing2') {
