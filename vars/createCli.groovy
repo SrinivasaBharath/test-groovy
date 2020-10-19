@@ -13,7 +13,12 @@ def call(Map params){
         stage('Testing') {
           steps {
             echo "Test"
-            echo env.getProperty("RhVersion")
+            echo env.getProperty("rhel_version")
+            echo env.getProperty("Ceph_version")
+            echo env.getProperty("Container_image")
+            echo env.getProperty("Repolink") 
+            echo env.getProperty("Branch")  
+              
           }
         }
         stage('Testing2') {
